@@ -1,10 +1,10 @@
 from dotenv import load_dotenv
-import os
+from os import getenv
 import discord
 from discord.ext import commands
 
 load_dotenv("TOKEN.env")
-TOKEN = os.getenv("TOKEN")
+TOKEN = getenv("TOKEN")
 
 intents = discord.Intents.default()
 intents.message_content = True
