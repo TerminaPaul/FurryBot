@@ -1,5 +1,6 @@
 MotDuJour = "FURRY"
 
+
 def main(mot) -> bool | str:
     mot = maj(mot)
     for lettre in mot:
@@ -11,29 +12,30 @@ def main(mot) -> bool | str:
     return answer
 
 
-def maj(mot) -> str:
+def maj(mot: str) -> str:
     return mot.upper()
 
 
-def lettre_in_alphabet(lettre) -> bool:
+def lettre_in_alphabet(lettre: str) -> bool:
     if not lettre.isalpha():
         return False
     return True
 
 
-def len_mot_is_correct(mot) -> bool:
+def len_mot_is_correct(mot: str) -> bool:
     if len(mot) != len(MotDuJour):
         return False
     return True
 
 
-def verification(proposition) -> str:
+def verification(proposition: str) -> str:
     liste_lettre = {}
 
-    for l in MotDuJour :
-        liste_lettre[l] = 1 if l not in liste_lettre else liste_lettre[l] + 1 #rajoute les lettres de MotDuJour dans un Dictionnaire
+    for l in MotDuJour:
+        liste_lettre[l] = 1 if l not in liste_lettre else liste_lettre[
+                                                              l] + 1  # rajoute les lettres de MotDuJour dans un Dictionnaire
 
-    answer = [""]*len(MotDuJour)
+    answer = [""] * len(MotDuJour)
 
     for i, lettre in enumerate(proposition):
         if lettre == MotDuJour[i]:
@@ -52,7 +54,7 @@ def verification(proposition) -> str:
     return answer
 
 
-def mot_completer(mot) -> bool:
+def mot_completer(mot: str) -> bool:
     for caractere in mot:
         if caractere != "✅":
             return False
@@ -60,6 +62,7 @@ def mot_completer(mot) -> bool:
 
 
 if __name__ == '__main__':
+    MotDuJour = "aventurismes".upper()
     print(f"Il faut trouver un mot de : {len(MotDuJour)} lettres")
     while True:
         ans = main(input())
