@@ -96,6 +96,8 @@ async def roll(interaction: discord.Interaction, faces: app_commands.Range[int, 
         text = f"Le dé est tombé sur 25 (C'est un nouveau membre parmi les 25)"
     elif de == 36:
         text = f"OWO L-Le dé est tombé sur 36 (comme par hazard)"
+    elif de == 64:
+        text = f"Le dé est tombé sur un stack"
     elif de == 67:
         text = f"Non."
     elif de >= 1000000:
