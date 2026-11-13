@@ -107,7 +107,8 @@ async def roll(interaction: discord.Interaction, faces: app_commands.Range[int, 
 #Commande !jointroutgang
 @bot.tree.command(name="jointroutgang", description="Trout Application")
 async def jointroutgang(interaction: discord.Interaction):
-    await interaction.response.send_message(f'''Le "Trout Gang" n’est en aucun cas affilié au serveurs Discord ou du "FurryBot"''',
+    print(f"{interaction.user.name} a fait /jointroutgang et as reçut le formulaire d'application")
+    await interaction.response.send_message('''Le "Trout Gang" n’est en aucun cas affilié au serveurs Discord ou du "FurryBot"''',
                                             file= discord.File("Trout Application.odt"))
 
 bot.run(TOKEN)
