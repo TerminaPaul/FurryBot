@@ -72,7 +72,7 @@ class RejouerView(discord.ui.View):
 async def motmystere(interaction: discord.Interaction):
     await interaction.response.send_modal(MotMystereModal())
 
-# Commande !mercredi
+#Commande !mercredi
 @bot.tree.command(name="mercredi", description="Demande a Doji si il est l'heure de sortir les poubelles")
 async def mercredi(interaction: discord.Interaction):
     if est_mercredi():
@@ -83,7 +83,7 @@ async def mercredi(interaction: discord.Interaction):
         print(f"{interaction.user.name} a fait /mercredi (il n'était pas mercredi)")
         await interaction.response.send_message("Nous ne sommes pas mercredi, ce n'est pas le moment de sortir les poubelles")
 
-
+#Commande !roll
 @bot.tree.command(name="roll", description="Jette un dé avec le nombre de faces de ton choix")
 @app_commands.describe(faces="Nombre de faces du dé")
 async def roll(interaction: discord.Interaction, faces: app_commands.Range[int, 1] = 6):
@@ -103,5 +103,11 @@ async def roll(interaction: discord.Interaction, faces: app_commands.Range[int, 
     elif de >= 1000000:
         text = f"Le dé est tombé sur : {de} (ça fait vraiment beaucoup)"
     await interaction.response.send_message(text)
+
+#Commande !jointroutgang
+@bot.tree.command(name="jointroutgang", description="Trout Application")
+async def jointroutgang(interaction: discord.Interaction):
+    await interaction.response.send_message(f'''Le "Trout Gang" n’est en aucun cas affilié au serveurs Discord ou du "FurryBot"''',
+                                            file= discord.File("Trout Application.odt"))
 
 bot.run(TOKEN)
