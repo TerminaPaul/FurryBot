@@ -73,15 +73,15 @@ async def motmystere(interaction: discord.Interaction):
     await interaction.response.send_modal(MotMystereModal())
 
 #Commande !mercredi
-@bot.tree.command(name="mercredi", description="Demande a Doji si il est l'heure de sortir les poubelles")
+@bot.tree.command(name="mercredi", description="Demande a Doji si c'est le jour de sortir les poubelles")
 async def mercredi(interaction: discord.Interaction):
     if est_mercredi():
         print(f"{interaction.user.name} a fait /mercredi (il était mercredi)")
-        await interaction.response.send_message(f"Nous sommes mercredi, ça tombe bien c'est l'heure de sortir les poubelles",
+        await interaction.response.send_message(f"Nous sommes mercredi, ça tombe bien c'est le jour de sortir les poubelles",
                                                 file= discord.File("Mercredi.gif"))
     else:
         print(f"{interaction.user.name} a fait /mercredi (il n'était pas mercredi)")
-        await interaction.response.send_message("Nous ne sommes pas mercredi, ce n'est pas le moment de sortir les poubelles")
+        await interaction.response.send_message("Nous ne sommes pas mercredi, ce n'est pas le jour de sortir les poubelles")
 
 #Commande !roll
 @bot.tree.command(name="roll", description="Jette un dé avec le nombre de faces de ton choix")
