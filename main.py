@@ -73,15 +73,15 @@ async def motmystere(interaction: discord.Interaction):
     await interaction.response.send_modal(MotMystereModal())
 
 #Commande !mercredi
-@bot.tree.command(name="mercredi", description="Demande a Doji si c'est le jour où on sort les poubelles")
+@bot.tree.command(name="mercredi", description="Demande a Doji si c'est le jour où on sort les POUBELLES")
 async def mercredi(interaction: discord.Interaction):
     if est_mercredi():
         print(f"{interaction.user.name} a fait /mercredi (il était mercredi)")
-        await interaction.response.send_message(f"Nous sommes mercredi, ça tombe bien c'est le jour où on sort les poubelles",
+        await interaction.response.send_message(f"Nous sommes mercredi, ça tombe bien c'est le jour où on sort les POUBELLES",
                                                 file= discord.File("Mercredi.gif"))
     else:
         print(f"{interaction.user.name} a fait /mercredi (il n'était pas mercredi)")
-        await interaction.response.send_message("Nous ne sommes pas mercredi, ce n'est pas le jour où on sort les poubelles")
+        await interaction.response.send_message("Nous ne sommes pas mercredi, ce n'est pas le jour où on sort les POUBELLES")
 
 #Commande !roll
 @bot.tree.command(name="roll", description="Jette un dé avec le nombre de faces de ton choix")
@@ -108,7 +108,6 @@ async def roll(interaction: discord.Interaction, faces: app_commands.Range[int, 
 @bot.tree.command(name="jointroutgang", description="Trout Application")
 async def jointroutgang(interaction: discord.Interaction):
     print(f"{interaction.user.name} a fait /jointroutgang et as reçut le formulaire d'application")
-    await interaction.response.send_message('''Le "Trout Gang" n’est en aucun cas affilié au serveurs Discord ou du "FurryBot"''',
-                                            file= discord.File("Trout Application.odt"))
+    await interaction.response.send_message(f'''Le "Trout Gang" n’est en aucun cas affilié au serveurs Discord ou du "FurryBot"\nhttps://docs.google.com/forms/d/e/1FAIpQLScLYa3XnGXT6aceJhJGpJvrxLA44CtGzwjkS7j-hRrG6CGkjg/viewform'''                                    )
 
 bot.run(TOKEN)
